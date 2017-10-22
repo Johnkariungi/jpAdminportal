@@ -1,0 +1,75 @@
+.btn-primary {
+    color: #000;
+    background-color: none;
+    border-color: none;
+}
+
+.bg-dark2 {
+    background-color:#000;
+}
+
+/*tab pills*/
+#exTab1 .tab-content {
+  color : #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding : 5px 15px;
+}
+
+#exTab2 h3 {
+  color : #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+
+// Mixin itself
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+// Usage as a mixin
+.element {
+  @include clearfix;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 1.0);
+
+  }
+
+  /*scroll button*/
+  .scroll-to-top {
+      position: fixed;
+      right: 15px;
+      bottom: 3px;
+      /*display: none;*/
+      text-align: center;
+  }
+
+  .dropdown-menu {
+    background-color: rgba(0, 0, 0, 1.0);
+  }
+  .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .card-header
+    margin-bottom: 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 0;
+    border-radius:0;
+  }
+  .card-body {
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 0;
+  }
