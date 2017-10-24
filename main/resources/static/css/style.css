@@ -56,20 +56,47 @@
   }
 
   .dropdown-menu {
-    background-color: rgba(0, 0, 0, 1.0);
+    background-color: #343a40;
+    color:#fff;
+    border:none;
+    border-color:#343a40;
+    border-radius:0;
   }
   .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.5);
   }
 
-  .card-header
+  .card {
+      margin-bottom: 0;
+      background-color: rgb(255, 255, 255);
+      border-bottom: 0;
+      border-radius:0;
+      border:0;
+      background:black;
+      border-color:#343a40;
+    }
+
+  .card-header {
     margin-bottom: 0;
     background-color: rgb(255, 255, 255);
     border-bottom: 0;
     border-radius:0;
+    border:0;
+    background:black;
+    border-color:black;
   }
   .card-body {
     background-color: rgb(255, 255, 255);
     border: 0;
     border-radius: 0;
+    background:black;
+    border-color:black;
   }
+
+  .input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+  .dropdown-item {
+      font-weight: 100;
+      color: #fff;
+}

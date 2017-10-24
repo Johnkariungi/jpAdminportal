@@ -174,14 +174,14 @@ a {
   border-radius: 0; }
 
 .btn-default {
-  color: #42DCA3;
-  border: 1px solid #42DCA3;
+  color: #fff;
+  border: 1px solid #fff;
   background-color: transparent; }
   .btn-default:focus, .btn-default:hover {
-    color: black;
-    border: 1px solid #42DCA3;
+    color: #fff;
+    border: 1px solid #fff;
     outline: none;
-    background-color: #42DCA3; }
+    background-color: #fff; }
 
 ul.banner-social-buttons {
   margin-top: 0; }
