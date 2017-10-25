@@ -173,7 +173,7 @@ a {
   text-transform: uppercase;
   border-radius: 0; }
 
-.btn-default {
+/*.btn-default {
   color: #fff;
   border: 1px solid #fff;
   background-color: transparent; }
@@ -181,7 +181,7 @@ a {
     color: #fff;
     border: 1px solid #fff;
     outline: none;
-    background-color: #fff; }
+    background-color: #fff; }*/
 
 ul.banner-social-buttons {
   margin-top: 0; }

@@ -1,14 +1,14 @@
-.btn-primary {
+/*.btn-primary {
     color: #000;
     background-color: none;
     border-color: none;
-}
-
+}*/
+/*
 .bg-dark2 {
     background-color:#000;
 }
 
-/*tab pills*/
+*//*tab pills*//*
 #exTab1 .tab-content {
   color : #fff;
   background-color: rgba(0, 0, 0, 0.8);
@@ -21,7 +21,7 @@
   padding : 5px 15px;
 }
 
-/* remove border radius for the tab */
+*//* remove border radius for the tab *//*
 
 #exTab1 .nav-pills > li > a {
   border-radius: 0;
@@ -46,12 +46,12 @@
 
   }
 
-  /*scroll button*/
+  *//*scroll button*//*
   .scroll-to-top {
       position: fixed;
       right: 15px;
       bottom: 3px;
-      /*display: none;*/
+      *//*display: none;*//*
       text-align: center;
   }
 
@@ -99,4 +99,73 @@
   .dropdown-item {
       font-weight: 100;
       color: #fff;
-}
+}*/
+/*
+
+.btn-primary {
+  color: #343a40;
+  border: 1px solid #343a40;
+  background-color: transparent; }
+  .btn-default:focus, .btn-default:hover {
+    color: #343a40;
+    border: 1px solid #343a40;
+    outline: none;
+    background-color: #343a40; }
+
+.btn-success {
+  color: #343a40;
+  border: 1px solid #343a40;
+  background-color: transparent; }
+  .btn-default:focus, .btn-default:hover {
+    color: #343a40;
+    border: 1px solid #343a40;
+    outline: none;
+    background-color: #343a40; }*/
+
+/*header*/
+  .masthead {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 200px 0;
+    text-align: center;
+    color: white;
+    background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+    .masthead .intro-body {
+      display: table-cell;
+      vertical-align: middle; }
+      .masthead .intro-body .brand-heading {
+        font-size: 50px; }
+      .masthead .intro-body .intro-text {
+        font-size: 18px; }
+    @media (min-width: 768px) {
+      .masthead {
+        height: 100%;
+        padding: 0; }
+        .masthead .intro-body .brand-heading {
+          font-size: 100px; }
+        .masthead .intro-body .intro-text {
+          font-size: 22px; } }
+
+  .btn-circle {
+    font-size: 26px;
+    width: 55px;
+    height: 55px;
+    margin-top: 15px;
+    line-height: 38px;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+    color: white;
+    border: 2px solid white;
+    border-radius: 100% !important;
+    background: transparent; }
+    .btn-circle:focus, .btn-circle:hover {
+      color: white;
+      outline: none;
+      background: rgba(255, 255, 255, 0.1); }

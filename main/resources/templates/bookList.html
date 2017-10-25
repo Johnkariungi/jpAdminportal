@@ -4,8 +4,8 @@
 <head th:replace="common/header :: common-header" />
 
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-<div th:replace="common/header :: navbar" />
+<body id="page-top"><!--class="fixed-nav sticky-footer bg-dark"-->
+<div th:replace="common/frontend-header :: navbar" />
 
 <div class="content-wrapper">
     <div class="container-fluid">
@@ -37,6 +37,7 @@
                             <td th:text="${book.title}"></td>
                             <td th:text="${book.author}"></td>
                             <td th:text="${book.category}"></td>
+                            <td th:text="${book.listPrice}"></td>
                             <td th:text="${book.ourPrice}"></td>
                             <td th:text="${book.active}"></td>
                             <td>delete</td>
