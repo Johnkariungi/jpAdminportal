@@ -5,7 +5,7 @@
 
 
 <body id="page-top"><!--class="fixed-nav sticky-footer bg-dark"-->
-<div th:replace="common/frontend-header :: navbar" />
+<div th:replace="common/header :: navbar" />
 
 <div class="content-wrapper">
     <div class="container-fluid">
@@ -22,6 +22,7 @@
                     <table id="bookListTable" class="table table-bordered table-striped table-hover table-responsive">
                         <thead>
                         <tr>
+                            <th><input th:id="selectAllBooks" type="checkbox" /></th>
                             <th>Title</th>
                             <th>Author</th>
                             <th>Category</th>
@@ -33,14 +34,20 @@
                         </thead>
                         <tbody>
                         <tr data-th-each="book : ${bookList}">
-                            <td><input hidden="hidden" name="id" th:value="${book.id}" /></td><!--retrieve id after we submit-->
-                            <td th:text="${book.title}"></td>
+                            <td>
+                                <input hidden="hidden" name="id" th:value="${book.id}" /><!--retrieve id after we submit-->
+                            </td>
+                            <td><a th:href="@{/book/bookInfo(id=${book.id})}"><span th:text="${book.title}"></span></a></td>
                             <td th:text="${book.author}"></td>
                             <td th:text="${book.category}"></td>
                             <td th:text="${book.listPrice}"></td>
                             <td th:text="${book.ourPrice}"></td>
                             <td th:text="${book.active}"></td>
-                            <td>delete</td>
+                            <td>
+                                <input hidden="hidden" name="id" th:value="${book.id}" />
+                                <button th:id="'oneBook-'+${book.id}" class="btn btn-danger btn-xs delete-book" type="submit" value="delete" >
+                                    <span class="fa fa-times"></span>Delete</button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -55,6 +62,18 @@
 <!-- Bootstrap core JavaScript -->
 <div th:replace="common/header :: footer" />
 <div th:replace="common/header :: body-bottom-scripts" />
+
+<!--data-tables-->
+<script>
+    $(document).ready(function() {
+
+        $("#booLostTable").DataTable({
+            "lengthMenu": [[5,10,15,20, -1],[5,10,15,20,"All"]],
+            "ordering" : false,
+            stateSave : true
+        });
+    });
+</script>
 </body>
 
 </html>

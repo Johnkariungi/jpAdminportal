@@ -8,12 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
@@ -48,6 +51,47 @@ public class BookController {
             e.printStackTrace();
         }
         return "redirect:bookList";
+    }
+
+    @RequestMapping("/bookInfo")
+    public String bookInfo(@RequestParam("id") Long id, Model model /*to get the book we're looking for*/) {
+        Book book = bookService.findOne(id);
+        model.addAttribute("book", book); /*attach it to our model*/
+        return "bookInfo";
+    }
+
+    @RequestMapping("/updateBook")
+    public String updateBook(@RequestParam("id")Long id, Model model) {
+        Book book = bookService.findOne(id);
+        model.addAttribute("book", book);
+        return "updateBook";
+    }
+
+    @RequestMapping(value = "/updateBook", method = RequestMethod.POST)
+    public String updateBook(@ModelAttribute("book")Book book, HttpServletRequest request) {
+        bookService.save(book);
+
+        MultipartFile bookImage = book.getBookImage();
+
+        if (bookImage.isEmpty()) {
+            try {
+                byte[] bytes = bookImage.getBytes(); /*convert image to bites*/
+                String name = book.getId() + ".png"; /*define a book according to the id plus add .png*/
+
+                /*delete image*/
+                Files.delete(Paths.get("src/main/resources/static/image/book/" + name));
+
+                BufferedOutputStream stream = new BufferedOutputStream( /*to write to the path*/
+                    /*use amazon S3 bucket to store static files instead of the local system for production or add micro-services*/
+                        new FileOutputStream(new File("src/main/resources/static/image/book/" +  name)));
+                stream.write(bytes);
+                stream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return "redirect:/book/bookInfo?id=" + book.getId();
     }
 
     @RequestMapping("/bookList")

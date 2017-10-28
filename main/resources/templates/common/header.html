@@ -15,9 +15,13 @@
     <!--Page level plugin CSS-->
     <link th:href="@{/vendor/datatables/dataTables.bootstrap4.css}" rel="stylesheet" type="text/css" />
     <!--Custom styles-->
-    <link th:href="@{./css/sb-admin.css}" rel="stylesheet" />
-    <link th:href="@{./css/style.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/sb-admin.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
    <!-- <link th:href="@{./css/yeti.css}" rel="stylesheet" type="text/css"/>-->
+
+    <!--plugin edit paragraph-->
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 </head>
 <body>
 <!-- Navigation-->

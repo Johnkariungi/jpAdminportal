@@ -50,19 +50,19 @@ public class PasswordResetToken {
         return EXPIRATION;
     }
 
-    public Long getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(java.lang.Long id) {
         this.id = id;
     }
 
-    public String getToken() {
+    public java.lang.String getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(java.lang.String token) {
         this.token = token;
     }
 
@@ -84,7 +84,7 @@ public class PasswordResetToken {
     /*generate toString methods using the fields*/
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "PasswordResetToken{" +
                 "id=" + id +
                 ", token=" + token +
